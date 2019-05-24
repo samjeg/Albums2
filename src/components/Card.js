@@ -1,38 +1,38 @@
 //Import librareis to make components
 import React from 'react';
-import { Text, TouchableHighlight, Dimensions } from 'react-native';
+import { TouchableHighlight, Dimensions } from 'react-native';
 import { BoxShadow } from 'react-native-shadow';
 
 
 //Make a component
-const Header = (props) => {
-	const { textStyle, viewStyle, shadowOpt } = styles; 
+const Card = (props) => {
+  const { viewStyle, shadowOpt } = styles; 
 
-	return (
-		<BoxShadow setting={shadowOpt}>
-			<TouchableHighlight style={viewStyle}>
-				<Text style={textStyle}>{ props.headerText }</Text>
-			</TouchableHighlight>
-		</BoxShadow>
-	);
+  return (
+    <BoxShadow setting={shadowOpt}>
+      <TouchableHighlight style={viewStyle}>
+          {props.children}
+      </TouchableHighlight>
+    </BoxShadow>
+  );
 };
 
 
 const styles = {
-	viewStyle: {
-		position: 'relative',
-		width: Dimensions.get('window').width,
+    viewStyle: {
+        position: 'relative',
+        width: Dimensions.get('window').width,
         height: 120,
         backgroundColor: '#f5a623',
         borderRadius: 3,
         paddingTop: 15,
         justifyContent: 'center',
-		alignItems: 'center',
+        alignItems: 'center',
         // marginVertical:5,
         overflow: 'hidden'
-	},
-	shadowOpt: {
-		width: Dimensions.get('window').width,
+    },
+    shadowOpt: {
+        width: Dimensions.get('window').width,
         height: 120,
         color: '#000',
         border: 2,
@@ -42,12 +42,9 @@ const styles = {
         y: 2,
         style: { marginVertical: 5 }
     },
-	textStyle: {
-		fontSize: 20
-	}
 };
 
 
 //Make componenet available to other parts of the app
-export default Header;
+export default Card;
 

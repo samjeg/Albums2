@@ -1,6 +1,6 @@
 //Import librareis to make components
 import React from 'react';
-import { Text, TouchableHighlight, Dimensions } from 'react-native';
+import { Text, TouchableHighlight } from 'react-native';
 import { BoxShadow } from 'react-native-shadow';
 
 
@@ -17,30 +17,30 @@ const Header = (props) => {
 	);
 };
 
-
 const styles = {
 	viewStyle: {
-		position: 'relative',
-		width: Dimensions.get('window').width,
-        height: 120,
-        backgroundColor: '#f5a623',
-        borderRadius: 3,
-        paddingTop: 15,
-        justifyContent: 'center',
+		backgroundColor: '#f5a623',
+		justifyContent: 'center',
 		alignItems: 'center',
+        height: 60,
+        width: 400,
+        borderRadius: 3,
         // marginVertical:5,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        elevation: 2,
+        position: 'relative',
+        // marginHorizontal: 10
 	},
 	shadowOpt: {
-		width: Dimensions.get('window').width,
-        height: 120,
+		width: 400,
+        height: 60,
         color: '#000',
         border: 2,
         radius: 3,
         opacity: 0.2,
         x: 0,
         y: 2,
-        style: { marginVertical: 5 }
+        style: { marginVertical: 5, marginHorizontal: 7 },
     },
 	textStyle: {
 		fontSize: 20

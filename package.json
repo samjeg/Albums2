@@ -10,6 +10,7 @@
     "axios": "^0.18.0",
     "react": "16.8.3",
     "react-native": "0.59.8",
+    "react-native-expo-viewport-units": "0.0.8",
     "react-native-shadow": "^1.2.2",
     "react-native-svg": "^9.4.0"
   },

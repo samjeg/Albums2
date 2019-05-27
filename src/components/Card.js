@@ -1,7 +1,8 @@
 //Import librareis to make components
 import React from 'react';
-import { TouchableHighlight } from 'react-native';
+import { TouchableHighlight, View } from 'react-native';
 import { BoxShadow } from 'react-native-shadow';
+import { vw } from 'react-native-expo-viewport-units';
 
 
 //Make a component
@@ -11,7 +12,9 @@ const Card = (props) => {
     return (
         <BoxShadow setting={shadowOpt}>
             <TouchableHighlight style={viewStyle}>
-                {props.children}
+                <View style={viewStyle}>
+                    {props.children}
+                </View>
             </TouchableHighlight>
         </BoxShadow>
     );
@@ -21,9 +24,9 @@ const Card = (props) => {
 const styles = {
     viewStyle: {
         position: 'relative',
-        width: 400,
-        height: 100,
-        backgroundColor: '#f5a623',
+        width: vw(95),
+        height: vw(120),
+        backgroundColor: '#fff',
         borderRadius: 3,
         justifyContent: 'center',
         alignItems: 'center',
@@ -31,8 +34,8 @@ const styles = {
         overflow: 'hidden'
     },
     shadowOpt: {
-        width: 400,
-        height: 100,
+        width: vw(95),
+        height: vw(120),
         color: '#000',
         border: 2,
         radius: 3,

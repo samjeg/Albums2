@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Linking } from 'react-native';
 import { vw } from 'react-native-expo-viewport-units';
 import Card from './Card';
 import CardSection from './CardSection';
@@ -8,7 +8,7 @@ import Button from './Button';
 
 const AlbumDetail = ({ album }) => {
 	const { containerHeaderStyle, imageStyle, imageHeaderStyle } = styles;
-	const { title, artist, image, thumbnail_image } = album;
+	const { title, artist, image, thumbnail_image, url } = album;
 
 	return (
 		<Card>
@@ -33,7 +33,7 @@ const AlbumDetail = ({ album }) => {
 			</CardSection>
 
 			<CardSection>
-				<Button onPress={() => console.log('Hola!')}>
+				<Button onPress={() => Linking.openURL(url)}>
 					Buy Now
 				</Button>
 			</CardSection>
